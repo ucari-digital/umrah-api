@@ -13,7 +13,7 @@ class BankController extends Controller
     public function data()
     {
     	try {
-    		$bank = bank::all();
+    		$bank = bank::where('status', '!=', 'false')->get();
     		return Response::json($bank, 'Berhasil mengambil query', 'success', 200);
     	} catch (Exception $e) {
     		return Response::json($e->getMessage(), 'Error', 'failed', 500);

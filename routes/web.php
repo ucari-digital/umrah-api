@@ -55,6 +55,13 @@ Route::middleware('token')->group(function(){
     });
 
     /**
+    * Departemen
+    */
+    Route::prefix('departemen')->group(function(){
+        Route::get('data', 'V1\DepartemenController@data');
+    });
+
+    /**
      * pendaftar
      *
      */
